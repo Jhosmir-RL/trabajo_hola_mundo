@@ -1,0 +1,14 @@
+name:  Prueba num 1
+
+on:
+  push:
+    branches:
+      - nain
+
+jobs:
+  decir_hola:
+    runs-on: ubuntu:latest
+
+    steps:
+      - name: Mostrar mensaje
+        run: echo "Hola mundo"
