@@ -3,7 +3,7 @@ name:  Prueba num 1
 on:
   push:
     branches:
-      - nain
+      - main
 
 jobs:
   decir_hola:
