@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
             
             // Ejecuta la consulta manualmente como string
             const records = await sql(`SELECT * FROM "${tableName}"`);
-            
+            // hola mundo
             tablesData[tableName] = records;
         }
 
