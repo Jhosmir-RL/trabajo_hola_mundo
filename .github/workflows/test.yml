@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-    environment: production
+    environment: productions
     steps:
       - name: Mostrar mensaje
         run: echo "Hola mundo"
