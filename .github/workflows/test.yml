@@ -26,10 +26,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Logearnos en GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u DanielGB230 --password-stdin
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u danielgb230 --password-stdin
 
       - name: Crear imagen
-        run: docker build . -t ghcr.io/DanielGB230/express-image:latest
+        run: docker build . -t ghcr.io/danielgb230/express-image:latest
 
       - name: Desplegar imagen
-        run: docker push ghcr.io/DanielGB230/express-image:latest
+        run: docker push ghcr.io/danielgb230/express-image:latest
