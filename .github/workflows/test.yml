@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Mostrar mensaje
         run: echo "Hola mundo"
-      
+
       - name: Enviar Peticion
         run: |
           curl -X POST 'https://webhook.site/892f2749-aba3-44c8-af63-04640edf7a85' \
@@ -26,10 +26,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Logearnos en GHCR
-        run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u jhosmir_rl --password-stdin
+        env:
+          GHCR_PAT: ${{ secrets.GHCR_PAT }}
+        run: echo "$GHCR_PAT" | docker login ghcr.io -u jhosmir_rl --password-stdin
 
       - name: Crear imagen
-        run: docker build -t ghcr.io/jhosmir_rl/express-image:latest .
+        run: docker build . -t ghcr.io/jhosmir_rl/express-image:latest
 
       - name: Desplegar imagen
         run: docker push ghcr.io/jhosmir_rl/express-image:latest
